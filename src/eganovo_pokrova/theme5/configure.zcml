@@ -1,0 +1,55 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:five="http://namespaces.zope.org/five"
+    xmlns:plone="http://namespaces.plone.org/plone"
+    xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
+    xmlns:i18n="http://namespaces.zope.org/i18n"
+    i18n_domain="eganovo_pokrova.theme5">
+
+  <i18n:registerTranslations directory="locales" />
+
+  <includeDependencies package="." />
+
+  <include package=".browser" />
+
+  <plone:static
+      directory="theme"
+      type="theme"
+      name="eganovo_pokrova.theme5"
+      />
+
+  <genericsetup:registerProfile
+      name="default"
+      title="eganovo_pokrova.theme5"
+      directory="profiles/default"
+      description="Installs the eganovo_pokrova.theme5 add-on."
+      provides="Products.GenericSetup.interfaces.EXTENSION"
+      />
+
+  <genericsetup:importStep
+      name="eganovo_pokrova.theme5-postInstall"
+      title="eganovo_pokrova.theme5 post_install import step"
+      description="Post install import step from eganovo_pokrova.theme5"
+      handler=".setuphandlers.post_install">
+  </genericsetup:importStep>
+
+  <genericsetup:registerProfile
+      name="uninstall"
+      title="eganovo_pokrova.theme5"
+      directory="profiles/uninstall"
+      description="Uninstalls the eganovo_pokrova.theme5 add-on."
+      provides="Products.GenericSetup.interfaces.EXTENSION"
+      />
+
+  <genericsetup:importStep
+      name="eganovo_pokrova.theme5-uninstall"
+      title="eganovo_pokrova.theme5 uninstall import step"
+      description="Import step run during ininstalling eganovo_pokrova.theme5"
+      handler=".setuphandlers.uninstall">
+  </genericsetup:importStep>
+
+  <utility
+      factory=".setuphandlers.HiddenProfiles"
+      name="eganovo_pokrova.theme5-hiddenprofiles" />
+
+</configure>

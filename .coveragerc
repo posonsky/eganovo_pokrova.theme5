@@ -1,0 +1,6 @@
+[report]
+include =
+    src/eganovo_pokrova/*
+omit =
+    */test*
+    */upgrades/*
