@@ -11,7 +11,9 @@ buildout-cache/
 develop-eggs/
 parts/
 src/*
+
 !src/eganovo_pokrova
+
 var/
 htmlcov/
 .coverage
@@ -20,3 +22,5 @@ output.xml
 *.swp
 log.html
 report.html
+
+temp*

@@ -5,6 +5,9 @@ from setuptools import find_packages
 from setuptools import setup
 
 
+VERSION = open('version.txt').read().strip()
+
+
 long_description = (
     open('README.rst').read() +
     '\n' +
@@ -19,7 +22,7 @@ long_description = (
 
 setup(
     name='eganovo_pokrova.theme5',
-    version='1.0a1',
+    version=VERSION,
     description="Diazo theme for Eganovo-Pokrova.RU",
     long_description=long_description,
     # Get more from https://pypi.python.org/pypi?%3Aaction=list_classifiers
