@@ -1,0 +1,14 @@
+{
+  "theme" : "./src/eganovo_pokrova/theme5/theme/",
+
+  "srcs" : {
+    "less" : "styles/less/main.less"
+  },
+
+  "dsts" : {
+    "styles" : "styles"
+  },
+
+  "sourceCss" : "main.css",
+  "targetCss" : "theme5-compiled.css"
+}

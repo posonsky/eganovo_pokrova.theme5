@@ -1,0 +1,20 @@
+{
+  "name": "eganovo_pokrova.theme5",
+  "version": "0.0.1",
+  "private": true,
+  "devDependencies": {
+    "browser-sync": "^2.11.1",
+    "grunt": "~0.4.4",
+    "grunt-browser-sync": "^0.8.2",
+    "grunt-contrib-less": "latest",
+    "grunt-contrib-watch": "latest",
+    "gulp": "^3.9.1",
+    "gulp-less": "^3.0.5",
+    "gulp-rename": "^1.2.2",
+    "gulp-rte": "^0.1.4",
+    "gulp-sequence": "^0.4.5",
+    "gulp-sourcemaps": "^1.6.0",
+    "gulp-symlink": "^2.1.4",
+    "require-dir": "^0.3.0"
+  }
+}

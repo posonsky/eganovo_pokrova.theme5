@@ -1,4 +1,4 @@
-/* bundle less file that will be compiled into tango-compiled.css */
+/* bundle less file that will be compiled into theme5-compiled.css */
 /*! normalize.css v3.0.1 | MIT License | git.io/normalize */
 html {
   font-family: sans-serif;
@@ -15,7 +15,6 @@ figcaption,
 figure,
 footer,
 header,
-hgroup,
 main,
 nav,
 section,
@@ -277,6 +276,7 @@ html {
 body {
   font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 14px;
+  font-weight: 500;
   line-height: 1.42857143;
   color: #4d4d4d;
   background-color: #fafafa;
@@ -292,12 +292,12 @@ textarea {
   line-height: inherit;
 }
 a {
-  color: #007bb3;
+  color: #007bb1;
   text-decoration: none;
 }
 a:hover,
 a:focus {
-  color: #004666;
+  color: #004665;
   text-decoration: underline;
 }
 a:focus {
@@ -328,6 +328,13 @@ hr {
   overflow: hidden;
   clip: rect(0, 0, 0, 0);
   border: 0;
+  color: #fff;
+  background-color: #000;
+}
+.sr-only a,
+.hiddenStructure a {
+  color: #fff;
+  background-color: #000;
 }
 .sr-only-focusable:active,
 .sr-only-focusable:focus {
@@ -348,7 +355,7 @@ h4,
 h5,
 h6 {
   font-family: inherit;
-  font-weight: 300;
+  font-weight: 400;
   line-height: 1.1;
   color: inherit;
 }
@@ -365,7 +372,7 @@ h1 a:focus,
 h2 a:focus,
 h3 a:focus {
   text-decoration: none;
-  border-bottom: 2px #004666 solid;
+  border-bottom: 2px #004665 solid;
 }
 h4,
 h5,
@@ -396,8 +403,8 @@ p {
 }
 .documentDescription {
   font-size: 18px;
-  font-weight: 500;
-  color: #777777;
+  font-weight: 700;
+  color: #696969;
   margin-bottom: 10px;
 }
 small {
@@ -411,12 +418,12 @@ mark {
   padding: .2em;
 }
 .discreet {
-  color: #777777;
-  font-weight: 300;
+  color: #696969;
+  font-weight: 400;
 }
 .documentByLine {
-  color: #777777;
-  font-weight: 300;
+  color: #696969;
+  font-weight: 400;
   margin-bottom: 10px;
 }
 .documentFirstHeading {
@@ -488,7 +495,7 @@ kbd {
 }
 pre {
   display: block;
-  padding: 9.5px;
+  padding: 10px;
   margin: 0 0 10px;
   font-size: 13px;
   line-height: 1.42857143;
@@ -507,11 +514,89 @@ pre code {
   background-color: transparent;
   border-radius: 0;
 }
+@media (min-width: 768px) {
+  div.row {
+    position: relative;
+  }
+  div.cell {
+    float: left;
+    top: 0;
+  }
+  div.width-1 {
+    width: 8.33333%;
+  }
+  div.width-2 {
+    width: 16.66667%;
+  }
+  div.width-3,
+  div.width-1\3a 4 {
+    width: 25%;
+  }
+  div.width-4,
+  div.width-1\3a 3 {
+    width: 33.33333%;
+  }
+  div.width-5 {
+    width: 41.66667%;
+  }
+  div.width-6,
+  div.width-1\3a 2 {
+    width: 50%;
+  }
+  div.width-7 {
+    width: 58.33333%;
+  }
+  div.width-8,
+  div.width-2\3a 3 {
+    width: 66.66667%;
+  }
+  div.width-9,
+  div.width-3\3a 4 {
+    width: 75%;
+  }
+  div.width-10 {
+    width: 83.33333%;
+  }
+  div.width-11 {
+    width: 91.66667%;
+  }
+  div.width-12 {
+    width: 100%;
+  }
+}
+div.row {
+  padding-bottom: 1px;
+}
+@media (min-width: 768px) {
+  #dashboard {
+    margin-left: -15px;
+    margin-right: -15px;
+    position: relative;
+  }
+  #dashboard:before,
+  #dashboard:after {
+    content: " ";
+    display: table;
+  }
+  #dashboard:after {
+    clear: both;
+  }
+  #dashboard-portlets1,
+  #dashboard-portlets2,
+  #dashboard-portlets3,
+  #dashboard-portlets4 {
+    float: left;
+    padding-left: 15px;
+    padding-right: 15px;
+    top: 0;
+    width: 25%;
+  }
+}
 table {
   max-width: 100%;
   background-color: #fff;
   border-radius: 4px;
-  font-weight: 300;
+  font-weight: 400;
   color: #696969;
 }
 th {
@@ -556,7 +641,7 @@ th {
 .listing > tbody > tr:nth-child(odd) > th {
   background-color: #f6f6f6;
 }
-@media screen and (max-width: 769px) {
+@media screen and (max-width: 767px) {
   .plone-has-table {
     width: 100%;
     margin-bottom: 15px;
@@ -625,7 +710,7 @@ table > tfoot > tr > td {
 }
 table > thead > tr > th,
 table > thead > tr > td {
-  border-bottom-width: #e5e5e5;
+  border-bottom: 1px solid #e5e5e5;
 }
 table col[class*="col-"] {
   position: static;
@@ -654,7 +739,7 @@ legend {
   color: #4d4d4d;
   border: 0;
   border-bottom: 1px solid #e5e5e5;
-  font-weight: 100;
+  font-weight: 300;
 }
 label {
   display: inline-block;
@@ -836,13 +921,13 @@ fieldset[disabled] input[type="checkbox"] {
 }
 .field.error div.error {
   padding-left: 30px;
-  font-weight: 300;
+  font-weight: 400;
 }
 .field.error div.error:before {
   background-color: #ac493f;
   content: "×";
   font-size: 14px;
-  font-weight: 300;
+  font-weight: 400;
   margin-left: -30px;
   margin-right: 5px;
   display: inline-block;
@@ -871,7 +956,7 @@ fieldset[disabled] input[type="checkbox"] {
   margin-top: 0;
   margin-bottom: 0;
   color: #666666;
-  font-weight: 300;
+  font-weight: 400;
   font-style: italic;
 }
 .formControls {
@@ -948,7 +1033,7 @@ label .required:after {
 button {
   display: inline-block;
   margin-bottom: 0;
-  font-weight: 500;
+  font-weight: 700;
   text-align: center;
   text-shadow: 0 1px rgba(0, 0, 0, 0.25);
   vertical-align: middle;
@@ -1129,8 +1214,8 @@ button .badge {
 }
 .context {
   color: #fff;
-  background-color: #2385c4;
-  border-color: #1b6899;
+  background-color: #007bb1;
+  border-color: #00587e;
 }
 .context:hover,
 .context:focus,
@@ -1138,8 +1223,8 @@ button .badge {
 .context.active,
 .open > .dropdown-toggle.context {
   color: #fff;
-  background-color: #1b6899;
-  border-color: #124465;
+  background-color: #00587e;
+  border-color: #002d41;
 }
 .context:active,
 .context.active,
@@ -1161,11 +1246,11 @@ fieldset[disabled] .context:active,
 .context.disabled.active,
 .context[disabled].active,
 fieldset[disabled] .context.active {
-  background-color: #2385c4;
-  border-color: #1b6899;
+  background-color: #007bb1;
+  border-color: #00587e;
 }
 .context .badge {
-  color: #2385c4;
+  color: #007bb1;
   background-color: #fff;
 }
 .destructive {
@@ -1212,7 +1297,7 @@ fieldset[disabled] .destructive.active {
 .link-parent {
   display: inline-block;
   margin-bottom: 0;
-  font-weight: 500;
+  font-weight: 700;
   text-align: center;
   text-shadow: 0 1px rgba(0, 0, 0, 0.25);
   vertical-align: middle;
@@ -1441,7 +1526,7 @@ fieldset[disabled] .link-parent.active {
   display: inline-block;
   color: #777777;
   padding: 8px 0;
-  font-weight: 300;
+  font-weight: 400;
 }
 @media (max-width: 768px) {
   .plone-breadcrumb > * > span {
@@ -1455,7 +1540,7 @@ fieldset[disabled] .link-parent.active {
   margin: 0;
 }
 .plone-breadcrumb ol > li {
-  font-weight: 300;
+  font-weight: 400;
   display: inline-block;
   line-height: 0;
   position: relative;
@@ -1485,6 +1570,9 @@ fieldset[disabled] .link-parent.active {
   top: -15px;
   padding: 0 !important;
 }
+.plone-breadcrumb ol a {
+  color: #086ca3;
+}
 .plone-breadcrumb ol > #breadcrumbs-current {
   color: #777777;
 }
@@ -1495,12 +1583,11 @@ fieldset[disabled] .link-parent.active {
   margin: 20px 0;
 }
 .listingBar > li {
-  font-weight: 300;
   display: inline;
   line-height: 0;
   position: relative;
   padding: 0;
-  font-weight: 100;
+  font-weight: 300;
 }
 .listingBar > li a {
   position: relative;
@@ -1508,7 +1595,7 @@ fieldset[disabled] .link-parent.active {
   padding: 6px 12px;
   line-height: 1.42857143;
   text-decoration: none;
-  color: #007bb3;
+  color: #007bb1;
   background-color: #fff;
   border: 1px solid #e5e5e5;
   margin-left: -1px;
@@ -1524,9 +1611,9 @@ fieldset[disabled] .link-parent.active {
 }
 .listingBar > li a:hover,
 .listingBar > li a:focus {
-  color: #004666;
+  color: #004665;
   background-color: #f2f1f1;
-  border-color: 1px solid #e5e5e5;
+  border: 1px solid #e5e5e5;
   -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
 }
@@ -1534,10 +1621,10 @@ fieldset[disabled] .link-parent.active {
 .listingBar > .active > a:hover,
 .listingBar > .active > a:focus {
   z-index: 2;
-  font-weight: 300;
+  font-weight: 400;
   color: #fff;
-  background-color: #007bb3;
-  border-color: #007bb3;
+  background-color: #007bb1;
+  border: #007bb1;
   cursor: default;
 }
 .listingBar > .disabled > a,
@@ -1545,7 +1632,7 @@ fieldset[disabled] .link-parent.active {
 .listingBar > .disabled > a:focus {
   color: #cccccc;
   background-color: #fcfcfd;
-  border-color: 1px solid #e5e5e5;
+  border: 1px solid #e5e5e5;
   cursor: default;
 }
 @media (max-width: 480px) {
@@ -1581,7 +1668,7 @@ fieldset[disabled] .link-parent.active {
   margin-bottom: -1px;
   border-radius: 4px 4px 0 0;
   background: #fcfcfd;
-  font-weight: 300;
+  font-weight: 400;
 }
 .pat-autotoc.autotabs .autotoc-nav a:last-child,
 .autotabs .autotoc-nav a:last-child {
@@ -1611,7 +1698,7 @@ fieldset[disabled] .link-parent.active {
   margin: 0 -12px -6px;
   border-radius: 0 0 4px 4px;
 }
-@media (max-width: 769px) {
+@media (max-width: 767px) {
   .autotabs .autotoc-nav {
     overflow-x: scroll;
     overflow-y: hidden;
@@ -1635,7 +1722,7 @@ fieldset[disabled] .link-parent.active {
   display: inline-block;
 }
 .folder-listing {
-  font-weight: 500;
+  font-weight: 700;
   list-style: none;
   position: relative;
   padding-left: 20px;
@@ -1652,7 +1739,7 @@ fieldset[disabled] .link-parent.active {
   color: #a7daf2;
 }
 .folder-listing .documentByLine {
-  font-weight: 300;
+  font-weight: 400;
   color: #777777;
 }
 .tileImage {
@@ -1666,6 +1753,19 @@ fieldset[disabled] .link-parent.active {
   clear: both;
   margin-top: 5px;
 }
+.entries::before,
+#content article.entry::after,
+#relatedItemBox ul li::after,
+#searchresults ul li::after {
+  content: " ";
+  display: block;
+  clear: both;
+  height: 2px;
+  visibility: hidden;
+}
+.icon-group-right .image-icon {
+  float: none;
+}
 .photoalbumEntryWrapper {
   display: block;
 }
@@ -1678,7 +1778,7 @@ fieldset[disabled] .link-parent.active {
   text-align: center;
   vertical-align: middle;
   display: table-cell;
-  font-weight: 300;
+  font-weight: 400;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
   border: 1px solid #e5e5e5;
   border-radius: 4px;
@@ -1698,23 +1798,23 @@ fieldset[disabled] .link-parent.active {
   border-radius: 4px;
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.17);
   font-size: 14px;
-  font-weight: 300;
+  font-weight: 400;
   text-shadow: 0 1px rgba(255, 255, 255, 0.1);
 }
 .portalMessage > strong,
 .portalMessage > dt {
-  font-weight: 500;
+  font-weight: 700;
   padding-right: 5px;
   color: rgba(0, 0, 0, 0.5);
 }
 .portalMessage a {
-  font-weight: 300;
-  color: #005176;
+  font-weight: 400;
+  color: #005074;
 }
 .portalMessage > strong:before,
 .portalMessage > dt:before {
   font-size: 14px;
-  font-weight: 300;
+  font-weight: 400;
   margin-left: -30px;
   margin-right: 10px;
   display: inline-block;
@@ -1816,6 +1916,9 @@ fieldset[disabled] .link-parent.active {
   padding: 13px 15px;
   color: #696969;
 }
+.portlet .portletHeader > a {
+  color: #086ca3;
+}
 .portlet.portletCalendar .portletHeader {
   text-align: center;
   position: relative;
@@ -1832,7 +1935,7 @@ fieldset[disabled] .link-parent.active {
   font-size: 24px;
   margin-top: -3px;
   line-height: 28px;
-  font-weight: 100;
+  font-weight: 500;
 }
 .portlet.portletCalendar .portletHeader .calendarPrevious:hover,
 .portlet.portletCalendar .portletHeader .calendarNext:hover {
@@ -1847,13 +1950,12 @@ fieldset[disabled] .link-parent.active {
   font-size: 14px;
   border-top: 1px solid #e5e5e5;
   background: #fff;
-  font-weight: 300;
+  font-weight: 400;
 }
 .portlet .portletContent > *,
 .portlet .portletContent > div:not(.portalMessage) {
   padding: 10px 15px;
   margin: 0;
-  font-weight: 300;
   color: #696969;
 }
 .portlet .portletContent > ul {
@@ -1866,6 +1968,7 @@ fieldset[disabled] .link-parent.active {
   padding: 10px 15px 26px 30px;
   position: relative;
   z-index: 1;
+  color: #086ca3;
 }
 .portlet .portletContent > ul > li > a {
   border-top: 1px solid #e5e5e5;
@@ -1889,11 +1992,11 @@ fieldset[disabled] .link-parent.active {
   display: block;
   z-index: 0;
   padding: 0 15px 10px 30px;
-  font-weight: 100;
+  font-weight: 400;
   position: relative;
   margin-top: -26px;
   font-size: 12px;
-  color: #777777;
+  color: #696969;
 }
 .portlet .portletContent > ul li:hover {
   background: #fcfcfd;
@@ -1904,7 +2007,7 @@ fieldset[disabled] .link-parent.active {
 .portlet .portletContent table {
   width: 100%;
   text-align: center;
-  text-align: middle;
+  vertical-align: middle;
   border-collapse: collapse;
   border-spacing: 0;
 }
@@ -1916,8 +2019,8 @@ fieldset[disabled] .link-parent.active {
   border-bottom: 1px solid #e5e5e5;
 }
 .portlet .portletContent table thead th {
-  color: #777777;
-  font-weight: 100;
+  color: #696969;
+  font-weight: 300;
   height: 40px;
   text-align: center;
 }
@@ -1950,7 +2053,7 @@ fieldset[disabled] .link-parent.active {
 }
 .portlet .portletContent table .cal_next_month,
 .portlet .portletContent table .cal_prev_month {
-  color: #cccccc;
+  color: #000;
 }
 .portlet .portletContent table .cal_next_month.cal_has_events > a,
 .portlet .portletContent table .cal_prev_month.cal_has_events > a {
@@ -1962,7 +2065,7 @@ fieldset[disabled] .link-parent.active {
 }
 .portlet .portletContent table .cal_next_month.cal_has_events > a:hover,
 .portlet .portletContent table .cal_prev_month.cal_has_events > a:hover {
-  color: #004666;
+  color: #004665;
 }
 .portlet .portletContent table .cal_next_month.cal_has_events > a:hover:after,
 .portlet .portletContent table .cal_prev_month.cal_has_events > a:hover:after {
@@ -1972,6 +2075,7 @@ fieldset[disabled] .link-parent.active {
   background: #e5e5e5;
   font-weight: 500;
   box-shadow: 0 0 0 5px #e5e5e5;
+  color: #000;
 }
 .portlet .portletContent table tbody tr:first-child td > * {
   margin-top: 10px;
@@ -1990,7 +2094,7 @@ fieldset[disabled] .link-parent.active {
   background: #fcfcfd;
   padding: 10px 15px;
   font-size: 12px;
-  font-weight: 300;
+  font-weight: 400;
   box-shadow: inset 0 10px 10px -10px rgba(0, 0, 0, 0.05);
 }
 .portletNavigationTree nav.portletContent > ul > li a {
@@ -2003,7 +2107,7 @@ fieldset[disabled] .link-parent.active {
   background: #fcfcfd;
   color: #696969;
   display: block;
-  font-weight: 300;
+  font-weight: 400;
 }
 .portletNavigationTree .portletContent {
   border-top: 0;
@@ -2105,6 +2209,9 @@ fieldset[disabled] .link-parent.active {
   padding: 13px 15px;
   color: #696969;
 }
+.managedPortlet .portletHeader > a {
+  color: #086ca3;
+}
 .managedPortlet.portletCalendar .portletHeader {
   text-align: center;
   position: relative;
@@ -2121,7 +2228,7 @@ fieldset[disabled] .link-parent.active {
   font-size: 24px;
   margin-top: -3px;
   line-height: 28px;
-  font-weight: 100;
+  font-weight: 500;
 }
 .managedPortlet.portletCalendar .portletHeader .calendarPrevious:hover,
 .managedPortlet.portletCalendar .portletHeader .calendarNext:hover {
@@ -2136,13 +2243,12 @@ fieldset[disabled] .link-parent.active {
   font-size: 14px;
   border-top: 1px solid #e5e5e5;
   background: #fff;
-  font-weight: 300;
+  font-weight: 400;
 }
 .managedPortlet .portletContent > *,
 .managedPortlet .portletContent > div:not(.portalMessage) {
   padding: 10px 15px;
   margin: 0;
-  font-weight: 300;
   color: #696969;
 }
 .managedPortlet .portletContent > ul {
@@ -2155,6 +2261,7 @@ fieldset[disabled] .link-parent.active {
   padding: 10px 15px 26px 30px;
   position: relative;
   z-index: 1;
+  color: #086ca3;
 }
 .managedPortlet .portletContent > ul > li > a {
   border-top: 1px solid #e5e5e5;
@@ -2178,11 +2285,11 @@ fieldset[disabled] .link-parent.active {
   display: block;
   z-index: 0;
   padding: 0 15px 10px 30px;
-  font-weight: 100;
+  font-weight: 400;
   position: relative;
   margin-top: -26px;
   font-size: 12px;
-  color: #777777;
+  color: #696969;
 }
 .managedPortlet .portletContent > ul li:hover {
   background: #fcfcfd;
@@ -2193,7 +2300,7 @@ fieldset[disabled] .link-parent.active {
 .managedPortlet .portletContent table {
   width: 100%;
   text-align: center;
-  text-align: middle;
+  vertical-align: middle;
   border-collapse: collapse;
   border-spacing: 0;
 }
@@ -2205,8 +2312,8 @@ fieldset[disabled] .link-parent.active {
   border-bottom: 1px solid #e5e5e5;
 }
 .managedPortlet .portletContent table thead th {
-  color: #777777;
-  font-weight: 100;
+  color: #696969;
+  font-weight: 300;
   height: 40px;
   text-align: center;
 }
@@ -2239,7 +2346,7 @@ fieldset[disabled] .link-parent.active {
 }
 .managedPortlet .portletContent table .cal_next_month,
 .managedPortlet .portletContent table .cal_prev_month {
-  color: #cccccc;
+  color: #000;
 }
 .managedPortlet .portletContent table .cal_next_month.cal_has_events > a,
 .managedPortlet .portletContent table .cal_prev_month.cal_has_events > a {
@@ -2251,7 +2358,7 @@ fieldset[disabled] .link-parent.active {
 }
 .managedPortlet .portletContent table .cal_next_month.cal_has_events > a:hover,
 .managedPortlet .portletContent table .cal_prev_month.cal_has_events > a:hover {
-  color: #004666;
+  color: #004665;
 }
 .managedPortlet .portletContent table .cal_next_month.cal_has_events > a:hover:after,
 .managedPortlet .portletContent table .cal_prev_month.cal_has_events > a:hover:after {
@@ -2261,6 +2368,7 @@ fieldset[disabled] .link-parent.active {
   background: #e5e5e5;
   font-weight: 500;
   box-shadow: 0 0 0 5px #e5e5e5;
+  color: #000;
 }
 .managedPortlet .portletContent table tbody tr:first-child td > * {
   margin-top: 10px;
@@ -2279,7 +2387,7 @@ fieldset[disabled] .link-parent.active {
   background: #fcfcfd;
   padding: 10px 15px;
   font-size: 12px;
-  font-weight: 300;
+  font-weight: 400;
   box-shadow: inset 0 10px 10px -10px rgba(0, 0, 0, 0.05);
 }
 .managedPortlet.inheritedPortlet {
@@ -2399,7 +2507,7 @@ fieldset[disabled] .link-parent.active {
   display: inline;
   padding: .2em .6em .3em;
   font-size: 12px;
-  font-weight: 300;
+  font-weight: 400;
   line-height: 1;
   color: #4d4d4d;
   text-align: center;
@@ -2414,7 +2522,7 @@ fieldset[disabled] .link-parent.active {
 }
 a.link-category:hover,
 a.link-category:focus {
-  color: #007bb3;
+  color: #007bb1;
   text-decoration: none;
   cursor: pointer;
 }
@@ -2473,6 +2581,9 @@ body#visual-portal-wrapper.pat-plone .outer-wrapper .contenttype-news-item:befor
 body#visual-portal-wrapper.pat-plone #edit-zone [class*="contenttype-"] {
   padding: 5px 15px 5px 50px;
 }
+body#visual-portal-wrapper.pat-plone #edit-zone a {
+  color: #fff;
+}
 body#visual-portal-wrapper.pat-plone #edit-zone [class*="contenttype-"]:after {
   font-family: "Fontello";
   font-size: 100%;
@@ -2512,6 +2623,10 @@ body#visual-portal-wrapper.pat-plone #edit-zone .contenttype-event:after {
 body#visual-portal-wrapper.pat-plone #edit-zone .contenttype-news-item:after {
   content: '\e80f';
 }
+.image-icon,
+.image-tile {
+  float: right;
+}
 #textAdjust .decrease-text {
   font-size: 12px;
 }
@@ -2550,7 +2665,7 @@ body#visual-portal-wrapper.pat-plone #edit-zone .contenttype-news-item:after {
   margin-left: 24px;
   font-size: 12px;
 }
-@media (max-width: 769px) {
+@media (max-width: 767px) {
   .pat-autotoc .autotoc-nav {
     float: none;
     margin: 0 0 20px 0;
@@ -2646,7 +2761,7 @@ body#visual-portal-wrapper.pat-plone #edit-zone .contenttype-news-item:after {
 .plone-modal.fade.in {
   opacity: 1;
   -webkit-transition: opacity .25s ease;
-  transition: opacity .25 ease;
+  transition: opacity .25s ease;
 }
 .plone-modal.fade .plone-modal-dialog {
   -webkit-transform: translate(0, -25%);
@@ -2733,7 +2848,7 @@ body#visual-portal-wrapper.pat-plone #edit-zone .contenttype-news-item:after {
 }
 .picker__list-item--highlighted:hover,
 .picker--focused .picker__list-item--highlighted {
-  background: #007bb3;
+  background: #007bb1;
   color: #fff;
 }
 li.picker__list-item {
@@ -2787,7 +2902,7 @@ ul.picker__list {
 }
 .picker__day--highlighted:hover,
 .picker__day--highlighted {
-  background: #007bb3;
+  background: #007bb1;
   color: #fff;
   font-weight: 600;
 }
@@ -2811,7 +2926,7 @@ ul.picker__list {
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.17);
 }
 .pat-tablesorter th:hover {
-  color: #007bb3;
+  color: #007bb1;
 }
 .pat-tablesorter .sortdirection {
   font-size: 75%;
@@ -2943,7 +3058,7 @@ ul.picker__list {
   #portal-header #portal-searchbox [type="text"] {
     border-top-right-radius: 0;
     border-bottom-right-radius: 0;
-    width: calc(180px);
+    width: 180px;
     display: inline-block;
   }
   #portal-header #portal-searchbox [type="submit"] {
@@ -2990,10 +3105,11 @@ ul.picker__list {
 .plone-nav > li > a:hover,
 .plone-nav > li > a:focus {
   text-decoration: none;
-  background-color: #9abdd6;
+  background-color: #7099bf;
 }
 .plone-navbar {
-  background-color: #007bb3;
+  background-color: #007bb1;
+  color: white;
   position: relative;
   min-height: 50px;
   margin-bottom: 20px;
@@ -3089,8 +3205,8 @@ ul.picker__list {
   outline: 0;
 }
 .plone-navbar-toggle:hover {
-  background-color: #6499c0;
-  border-color: #4581ab;
+  background-color: #46739c;
+  border-color: #365979;
 }
 .plone-navbar-toggle .icon-bar:after {
   content: "Menu";
@@ -3117,7 +3233,7 @@ ul.picker__list {
 .plone-navbar-nav > .selected > a:hover,
 .plone-navbar-nav > .selected > a:focus {
   color: white;
-  background-color: #9abdd6;
+  background-color: #7099bf;
 }
 @media (min-width: 768px) {
   .plone-navbar-nav {
@@ -3135,8 +3251,8 @@ ul.picker__list {
   }
 }
 .principal {
-  background: #d9d7d7;
-  background-image: linear-gradient(-45deg, rgba(255, 255, 255, 0.1) 14%, transparent 14%, transparent 50%, rgba(255, 255, 255, 0.1) 50%, rgba(255, 255, 255, 0.1) 64%, transparent 64%, transparent);
+  background: linear-gradient(-45deg, rgba(255, 255, 255, 0.1) 14%, transparent 14%, transparent 50%, rgba(255, 255, 255, 0.1) 50%, rgba(255, 255, 255, 0.1) 64%, transparent 64%, transparent);
+  background-color: #d9d7d7;
   background-size: 20px 20px;
   margin-top: -20px;
   margin-bottom: 20px;
@@ -3154,6 +3270,30 @@ ul.picker__list {
 }
 #content {
   margin-bottom: 48px;
+}
+#content-core a {
+  border-bottom: 1px solid #cccccc;
+}
+#content-core a:hover,
+#content-core a:focus {
+  border-bottom: none;
+}
+#content-core a:focus {
+  outline: thin dotted;
+  outline: 5px auto -webkit-focus-ring-color;
+  outline-offset: -2px;
+}
+#content-core .pat-structure a,
+#content-core .pat-resourceregistry a {
+  border-bottom: none;
+}
+#content-core .pat-structure a.btn,
+#content-core .pat-resourceregistry a.btn,
+#content-core .pat-structure .pagination a {
+  border-bottom: 1px solid #cccccc;
+}
+a.plone-toolbar-logo {
+  color: #fff;
 }
 .container,
 .container-fluid {
@@ -3222,6 +3362,88 @@ ul.picker__list {
     width: 1170px;
   }
 }
+#portal-footer-wrapper {
+  padding: 30px 15px;
+  background-color: #2e3133;
+  color: #cccccc;
+  text-align: center;
+  clear: both;
+}
+#portal-footer-wrapper p {
+  border-bottom: 1px solid #cccccc;
+  padding-bottom: 28px;
+}
+#portal-footer-wrapper abbr,
+#portal-footer-wrapper ul {
+  color: #cccccc;
+}
+#portal-footer-wrapper a {
+  color: #16a1e3;
+}
+#portal-footer-wrapper a:hover {
+  color: #57beef;
+}
+#portal-footer-wrapper .portletWrapper {
+  display: inline-block;
+}
+#portal-footer-wrapper .portletWrapper:first-child {
+  display: block;
+  border-bottom: 1px solid #4d4d4d;
+  padding-bottom: 1em;
+  margin-bottom: .5em;
+}
+#portal-footer-wrapper .portlet {
+  background: transparent;
+  border: 0;
+  font-weight: 300;
+  box-shadow: none;
+  margin-bottom: 0;
+}
+#portal-footer-wrapper .portlet .portletContent {
+  padding: 0;
+  background: transparent;
+  border: 0;
+}
+#portal-footer-wrapper .portlet .portletContent > * {
+  padding: inherit;
+}
+#portal-footer-wrapper .portlet .portletContent li {
+  background: transparent;
+  display: inline-block;
+  border: 0;
+  white-space: nowrap;
+  padding: 10px 30px;
+}
+#portal-footer-wrapper .portlet#portal-colophon .portletContent a {
+  padding: 10px 30px;
+}
+#portal-footer-wrapper .portlet .portletItem:before,
+#portal-footer-wrapper .portlet .portletItem a:before {
+  content: "";
+}
+#portal-footer-wrapper .portlet .portletItem a {
+  padding: 0;
+  border: 0;
+}
+#portal-footer-wrapper .portlet .portletActions {
+  text-transform: uppercase;
+  font-size: 12px;
+  font-weight: 700;
+  margin-right: 15px;
+}
+#portal-siteactions {
+  display: inline-block;
+  text-transform: uppercase;
+  font-size: 12px;
+}
+#portal-siteactions li {
+  font-weight: bold;
+  display: inline-block;
+  margin-left: 30px;
+}
+#portal-siteactions li:first-child {
+  margin-left: 0;
+}
 body.template-login_form #content-core,
 body.template-logged_out #content-core {
   border: 1px solid #e5e5e5;
@@ -3249,6 +3471,10 @@ body.template-logged_out #content-core .portletHeader {
   padding: 13px 15px;
   color: #696969;
 }
+body.template-login_form #content-core .portletHeader > a,
+body.template-logged_out #content-core .portletHeader > a {
+  color: #086ca3;
+}
 body.template-login_form #content-core.portletCalendar .portletHeader,
 body.template-logged_out #content-core.portletCalendar .portletHeader {
   text-align: center;
@@ -3268,7 +3494,7 @@ body.template-logged_out #content-core.portletCalendar .portletHeader .calendarN
   font-size: 24px;
   margin-top: -3px;
   line-height: 28px;
-  font-weight: 100;
+  font-weight: 500;
 }
 body.template-login_form #content-core.portletCalendar .portletHeader .calendarPrevious:hover,
 body.template-logged_out #content-core.portletCalendar .portletHeader .calendarPrevious:hover,
@@ -3287,7 +3513,7 @@ body.template-logged_out #content-core .portletContent {
   font-size: 14px;
   border-top: 1px solid #e5e5e5;
   background: #fff;
-  font-weight: 300;
+  font-weight: 400;
 }
 body.template-login_form #content-core .portletContent > *,
 body.template-logged_out #content-core .portletContent > *,
@@ -3295,7 +3521,6 @@ body.template-login_form #content-core .portletContent > div:not(.portalMessage)
 body.template-logged_out #content-core .portletContent > div:not(.portalMessage) {
   padding: 10px 15px;
   margin: 0;
-  font-weight: 300;
   color: #696969;
 }
 body.template-login_form #content-core .portletContent > ul,
@@ -3310,6 +3535,7 @@ body.template-logged_out #content-core .portletContent > ul > li a {
   padding: 10px 15px 26px 30px;
   position: relative;
   z-index: 1;
+  color: #086ca3;
 }
 body.template-login_form #content-core .portletContent > ul > li > a,
 body.template-logged_out #content-core .portletContent > ul > li > a {
@@ -3338,11 +3564,11 @@ body.template-logged_out #content-core .portletContent > ul .portletItemDetails 
   display: block;
   z-index: 0;
   padding: 0 15px 10px 30px;
-  font-weight: 100;
+  font-weight: 400;
   position: relative;
   margin-top: -26px;
   font-size: 12px;
-  color: #777777;
+  color: #696969;
 }
 body.template-login_form #content-core .portletContent > ul li:hover,
 body.template-logged_out #content-core .portletContent > ul li:hover {
@@ -3356,7 +3582,7 @@ body.template-login_form #content-core .portletContent table,
 body.template-logged_out #content-core .portletContent table {
   width: 100%;
   text-align: center;
-  text-align: middle;
+  vertical-align: middle;
   border-collapse: collapse;
   border-spacing: 0;
 }
@@ -3371,8 +3597,8 @@ body.template-logged_out #content-core .portletContent table thead {
 }
 body.template-login_form #content-core .portletContent table thead th,
 body.template-logged_out #content-core .portletContent table thead th {
-  color: #777777;
-  font-weight: 100;
+  color: #696969;
+  font-weight: 300;
   height: 40px;
   text-align: center;
 }
@@ -3412,7 +3638,7 @@ body.template-login_form #content-core .portletContent table .cal_next_month,
 body.template-logged_out #content-core .portletContent table .cal_next_month,
 body.template-login_form #content-core .portletContent table .cal_prev_month,
 body.template-logged_out #content-core .portletContent table .cal_prev_month {
-  color: #cccccc;
+  color: #000;
 }
 body.template-login_form #content-core .portletContent table .cal_next_month.cal_has_events > a,
 body.template-logged_out #content-core .portletContent table .cal_next_month.cal_has_events > a,
@@ -3430,7 +3656,7 @@ body.template-login_form #content-core .portletContent table .cal_next_month.cal
 body.template-logged_out #content-core .portletContent table .cal_next_month.cal_has_events > a:hover,
 body.template-login_form #content-core .portletContent table .cal_prev_month.cal_has_events > a:hover,
 body.template-logged_out #content-core .portletContent table .cal_prev_month.cal_has_events > a:hover {
-  color: #004666;
+  color: #004665;
 }
 body.template-login_form #content-core .portletContent table .cal_next_month.cal_has_events > a:hover:after,
 body.template-logged_out #content-core .portletContent table .cal_next_month.cal_has_events > a:hover:after,
@@ -3443,6 +3669,7 @@ body.template-logged_out #content-core .portletContent table .today > * {
   background: #e5e5e5;
   font-weight: 500;
   box-shadow: 0 0 0 5px #e5e5e5;
+  color: #000;
 }
 body.template-login_form #content-core .portletContent table tbody tr:first-child td > *,
 body.template-logged_out #content-core .portletContent table tbody tr:first-child td > * {
@@ -3465,7 +3692,7 @@ body.template-logged_out #content-core .portletFooter {
   background: #fcfcfd;
   padding: 10px 15px;
   font-size: 12px;
-  font-weight: 300;
+  font-weight: 400;
   box-shadow: inset 0 10px 10px -10px rgba(0, 0, 0, 0.05);
 }
 #portal-anontools ul {
@@ -3485,15 +3712,10 @@ body.template-logged_out #content-core .portletFooter {
   padding: 6px 0;
 }
 #portal-sitemap ul {
+  list-style: none;
   position: relative;
   font-size: 14px;
   padding-left: 20px;
-  -moz-column-count: 3;
-  -moz-column-gap: 20px;
-  -webkit-column-count: 3;
-  -webkit-column-gap: 20px;
-  column-count: 3;
-  column-gap: 20px;
 }
 #portal-sitemap ul li {
   position: relative;
@@ -3510,7 +3732,7 @@ body.template-logged_out #content-core .portletFooter {
   font-size: 1.1em;
 }
 .event.summary {
-  font-weight: 300;
+  font-weight: 400;
   max-width: 300px;
   float: right;
   background: #fafafa;
@@ -3544,20 +3766,20 @@ body.template-logged_out #content-core .portletFooter {
   overflow: hidden;
 }
 .cal_month {
-  background: #00afff;
-  font-weight: 300;
+  background: #00b0fe;
+  font-weight: 400;
   display: block;
   color: #fff;
   padding: 6px 12px;
 }
 .cal_day {
   font-size: 36px;
-  font-weight: 500;
+  font-weight: 700;
   display: block;
 }
 .cal_wkday {
   font-size: 12px;
-  font-weight: 100;
+  font-weight: 300;
   display: block;
   padding: 0 12px 6px;
 }
@@ -3849,7 +4071,13 @@ body.template-logged_out #content-core .portletFooter {
 #search-filter input {
   margin-right: 0.5rem;
 }
-h2 {
-  color: green !important;
+/*
+h1, h2 {
+  color: green;
 }
+*/
+.portlet .portletHeader {
+  background-image: url("../images/whitestar02.png");
+}
+
 /*# sourceMappingURL=theme5-compiled.css.map */
