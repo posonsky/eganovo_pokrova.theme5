@@ -10,8 +10,9 @@ bin/
 buildout-cache/
 develop-eggs/
 parts/
-src/*
+node_modules/
 
+src/*
 !src/eganovo_pokrova
 
 var/
