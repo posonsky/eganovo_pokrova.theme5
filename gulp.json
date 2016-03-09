@@ -10,5 +10,10 @@
   },
 
   "sourceCss" : "main.css",
-  "targetCss" : "theme5-compiled.css"
+  "targetCss" : "theme5-compiled.css",
+
+  "browserSync" : {
+    "proxy" : "lh:8081",
+    "startPath" : "/z_ep/ep"
+  }
 }
