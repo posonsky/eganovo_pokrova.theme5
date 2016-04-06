@@ -1,4 +1,8 @@
 /* bundle less file that will be compiled into theme5-compiled.css */
+/* ### PLONE IMPORTS ### */
+/* Font families */
+/* Core variables and mixins */
+/* Reset and dependencies */
 /*! normalize.css v3.0.1 | MIT License | git.io/normalize */
 html {
   font-family: sans-serif;
@@ -258,6 +262,7 @@ th {
     display: None;
   }
 }
+/* Core CSS */
 * {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -513,84 +518,6 @@ pre code {
   white-space: pre-wrap;
   background-color: transparent;
   border-radius: 0;
-}
-@media (min-width: 768px) {
-  div.row {
-    position: relative;
-  }
-  div.cell {
-    float: left;
-    top: 0;
-  }
-  div.width-1 {
-    width: 8.33333%;
-  }
-  div.width-2 {
-    width: 16.66667%;
-  }
-  div.width-3,
-  div.width-1\3a 4 {
-    width: 25%;
-  }
-  div.width-4,
-  div.width-1\3a 3 {
-    width: 33.33333%;
-  }
-  div.width-5 {
-    width: 41.66667%;
-  }
-  div.width-6,
-  div.width-1\3a 2 {
-    width: 50%;
-  }
-  div.width-7 {
-    width: 58.33333%;
-  }
-  div.width-8,
-  div.width-2\3a 3 {
-    width: 66.66667%;
-  }
-  div.width-9,
-  div.width-3\3a 4 {
-    width: 75%;
-  }
-  div.width-10 {
-    width: 83.33333%;
-  }
-  div.width-11 {
-    width: 91.66667%;
-  }
-  div.width-12 {
-    width: 100%;
-  }
-}
-div.row {
-  padding-bottom: 1px;
-}
-@media (min-width: 768px) {
-  #dashboard {
-    margin-left: -15px;
-    margin-right: -15px;
-    position: relative;
-  }
-  #dashboard:before,
-  #dashboard:after {
-    content: " ";
-    display: table;
-  }
-  #dashboard:after {
-    clear: both;
-  }
-  #dashboard-portlets1,
-  #dashboard-portlets2,
-  #dashboard-portlets3,
-  #dashboard-portlets4 {
-    float: left;
-    padding-left: 15px;
-    padding-right: 15px;
-    top: 0;
-    width: 25%;
-  }
 }
 table {
   max-width: 100%;
@@ -1513,6 +1440,7 @@ fieldset[disabled] .link-parent.active {
 .state-internally_published:focus {
   color: #5405cc;
 }
+/* Components */
 .plone-breadcrumb {
   clear: left;
   background-color: #e6e4e4;
@@ -2627,6 +2555,7 @@ body#visual-portal-wrapper.pat-plone #edit-zone .contenttype-news-item:after {
 .image-tile {
   float: right;
 }
+/* Patterns */
 #textAdjust .decrease-text {
   font-size: 12px;
 }
@@ -2978,6 +2907,7 @@ ul.picker__list {
 .jqtree-tree .jqtree-selected > .jqtree-element {
   background: #cccccc;
 }
+/* Structure */
 #portal-header {
   margin: 0 auto 15px;
   padding-top: 15px;
@@ -3728,6 +3658,7 @@ body.template-logged_out #content-core .portletFooter {
   top: 5px;
   position: relative;
 }
+/* Products */
 .vevent span.cal_month {
   font-size: 1.1em;
 }
@@ -4071,11 +4002,16 @@ body.template-logged_out #content-core .portletFooter {
 #search-filter input {
   margin-right: 0.5rem;
 }
+/* ### END OF PLONE IMPORTS ### */
 /*
 h1, h2 {
   color: green;
 }
 */
+body {
+  background-image: url("../images/big_banner.png");
+  background-repeat: no-repeat;
+}
 .portlet .portletHeader {
   background-image: url("../images/whitestar02.png");
 }

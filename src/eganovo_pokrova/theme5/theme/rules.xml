@@ -48,6 +48,17 @@
   <replace css:theme-children="#global_statusmessage"
     css:content-children="#global_statusmessage" />
 
+  <xsl:variable name="public_front">
+    <xsl:choose>
+      <xsl:when test="//body[contains(@class,'section-last-news') and contains(@class ,'userrole-anonymous')]">
+        <xsl:text>true</xsl:text>
+      </xsl:when>
+      <xsl:otherwise>
+        <xsl:text>false</xsl:text>
+      </xsl:otherwise>
+    </xsl:choose>
+  </xsl:variable>
+
   <!-- Central column -->
   <replace css:theme="#content-container" method="raw">
 
@@ -56,7 +67,7 @@
         <div class="col-xs-12 col-md-11">
 
           <xsl:choose>
-            <xsl:when test="//body[contains(@class,'section-last-news') and contains(@class ,'userrole-anonymous')]">
+            <xsl:when test="$public_front = 'true'">
               <xsl:apply-templates css:select="#content-core" />
             </xsl:when>
             <xsl:otherwise>
@@ -73,6 +84,8 @@
       </footer>
     </div>
   </replace>
+
+  <drop css:content="#document-action-sendto" if="$public_front = 'true'" />
 
   <!-- Right column -->
   <rules css:if-content="#portal-column-one">
