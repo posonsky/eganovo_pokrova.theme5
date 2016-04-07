@@ -5,8 +5,11 @@
        xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
        xmlns:xi="http://www.w3.org/2001/XInclude">
 
+  <!-- Include the backend theme -->
+  <xi:include href="++theme++barceloneta/backend.xml" />
+
   <theme href="index.html" />
-  <notheme css:if-not-content="#visual-portal-wrapper" />
+  <notheme css:if-not-content="body.frontend#visual-portal-wrapper" />
 
   <rules css:if-content="#portal-top">
     <!-- Attributes -->
@@ -89,7 +92,6 @@
 
   <!-- Right column -->
   <rules css:if-content="#portal-column-one">
-
     <replace css:theme="#right-column-container">
       <div class="col-xs-12 col-md-5 sidebar-offcanvas">
         <aside id="right-column">
@@ -97,7 +99,6 @@
         </aside>
       </div>
     </replace>
-
   </rules>
 
   <!-- Content header -->
