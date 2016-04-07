@@ -16,6 +16,7 @@ gulp.task('serve', ['less-build'], function() {
   browserSync.init({
     proxy: config.browserSync.proxy,
     startPath: config.browserSync.startPath,
+    open: false,
   });
 
   gulp.watch(config.theme + 'styles/**/*.less', ['less-build']);
