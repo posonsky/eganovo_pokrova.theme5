@@ -1,8 +1,10 @@
 {
   "theme" : "./src/eganovo_pokrova/theme5/theme/",
+  "modules" : "./node_modules/",
 
   "srcs" : {
-    "less" : "styles/less/main.less"
+    "less" : "styles/less/main.less",
+    "scss" : "styles/scss/main.scss"
   },
 
   "dsts" : {

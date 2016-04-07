@@ -11,15 +11,20 @@ gulp.task('less-build', ['less'], function() {
     .pipe(browserSync.stream());
 });
 
+gulp.task('scss-build', ['scss'], function() {
+  return gulp.src(config.theme + 'styles/*.css')
+    .pipe(browserSync.stream());
+});
 
-gulp.task('serve', ['less-build'], function() {
+gulp.task('serve', function() {
   browserSync.init({
     proxy: config.browserSync.proxy,
     startPath: config.browserSync.startPath,
     open: false,
   });
 
-  gulp.watch(config.theme + 'styles/**/*.less', ['less-build']);
+  //gulp.watch(config.theme + 'styles/**/*.less', ['less-build']);
+  gulp.watch(config.theme + 'styles/**/*.scss', ['scss-build']);
 
   gulp.watch(config.theme + '*')
     .on('change', browserSync.reload);

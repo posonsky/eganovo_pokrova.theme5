@@ -6,7 +6,7 @@ var gulp = require('gulp'),
 var config = require('../gulp.json');
 
 var mainLess = config.theme + config.srcs.less,
-  dstLess = config.theme + config.dsts.styles;
+  dstStyles = config.theme + config.dsts.styles;
 
 
 gulp.task('less', function () {
@@ -15,5 +15,5 @@ gulp.task('less', function () {
     .pipe(sourcemaps.init())
     .pipe(less())
     .pipe(sourcemaps.write('./'))
-    .pipe(gulp.dest(dstLess));
+    .pipe(gulp.dest(dstStyles));
 });
