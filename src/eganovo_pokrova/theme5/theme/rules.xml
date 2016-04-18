@@ -8,6 +8,8 @@
   <!-- Include the backend theme -->
   <xi:include href="++theme++barceloneta/backend.xml" />
 
+  <xsl:strip-space elements="*"/>
+
   <theme href="index.html" />
   <notheme css:if-not-content="body.frontend#visual-portal-wrapper" />
 
@@ -35,8 +37,41 @@
   <copy attributes="*" css:content="body" css:theme="body" />
 
   <!-- move global nav -->
-  <replace css:theme-children="#mainnavigation"
-    css:content-children="#portal-mainnavigation" method="raw" />
+  <!-- <xsl:variable name="portal_root"
+    select="id('portaltab-index_html')/a/@href"/> -->
+
+  <replace css:theme="a.navbar-brand">
+    <a class="navbar-brand" href="{$portal_url}">EP Logo</a>
+  </replace>
+
+  <replace css:theme-children="ul#mainnavigation"
+    css:content-children="ul#portal-globalnav" method="document" />
+
+  <xsl:template match="id('portal-globalnav')/li">
+    <xsl:if test="not(@id='portaltab-index_html')">
+      <xsl:copy>
+        <xsl:for-each select="@id|@role">
+          <xsl:copy/>
+        </xsl:for-each>
+        <xsl:attribute name="class">
+          <xsl:choose>
+            <xsl:when
+              test="contains(@class,'selected')">active nav-item selected</xsl:when>
+            <xsl:otherwise>nav-item</xsl:otherwise>
+          </xsl:choose>
+        </xsl:attribute>
+        <xsl:apply-templates select="a"/>
+      </xsl:copy>
+    </xsl:if>
+  </xsl:template>
+
+  <xsl:template match="a">
+    <xsl:copy>
+      <xsl:attribute name="class">nav-link</xsl:attribute>
+      <xsl:copy-of select="@*" />
+      <xsl:apply-templates />
+    </xsl:copy>
+  </xsl:template>
 
   <!-- include view @@hero on homepage only
   <after css:theme="#mainnavigation-wrapper"
