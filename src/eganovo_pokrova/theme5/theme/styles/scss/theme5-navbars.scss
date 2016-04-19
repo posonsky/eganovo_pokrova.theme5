@@ -1,0 +1,31 @@
+/* Main navigation bar */
+.navbar-toggler {
+  float: right;
+  position: relative;
+}
+
+.in {
+  .navbar-brand {
+    float: none !important;
+  }
+
+  .navbar-nav {
+    .nav-item {
+      float: none !important;
+      margin-left: 1rem;
+    }
+  }
+
+  form {
+    float: left !important;
+    margin-left: 1rem;
+
+    input {
+      float: left !important;
+    }
+
+    input#searchGadget {
+      width: 72%;
+    }
+  }
+}

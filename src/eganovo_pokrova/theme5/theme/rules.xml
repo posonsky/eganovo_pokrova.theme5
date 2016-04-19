@@ -36,12 +36,17 @@
    This is important for per-section styling -->
   <copy attributes="*" css:content="body" css:theme="body" />
 
+  <!-- Portal top -->
+  <!-- <replace css:theme="#portal-top" css:content-children="#portal-top" /> -->
+
   <!-- move global nav -->
   <!-- <xsl:variable name="portal_root"
     select="id('portaltab-index_html')/a/@href"/> -->
 
   <replace css:theme="a.navbar-brand">
-    <a class="navbar-brand" href="{$portal_url}">EP Logo</a>
+    <a class="navbar-brand" href="{$portal_url}">
+      <img src="{$portal_url}/++theme++eganovo_pokrova.theme5/images/star-logo-24.svg" />
+    </a>
   </replace>
 
   <replace css:theme-children="ul#mainnavigation"
@@ -69,6 +74,35 @@
     <xsl:copy>
       <xsl:attribute name="class">nav-link</xsl:attribute>
       <xsl:copy-of select="@*" />
+      <xsl:apply-templates />
+    </xsl:copy>
+  </xsl:template>
+
+  <!-- Search form -->
+  <after css:theme="#mainnavigation" css:content="#searchGadget_form" />
+  <drop css:content="#searchGadget_form .searchSection" />
+  <drop css:content="#searchGadget_form .hiddenStructure" />
+
+  <xsl:template match="id('searchGadget_form')">
+    <xsl:copy>
+      <xsl:copy-of select="@*" />
+      <xsl:attribute name="class">form-inline pull-xs-right</xsl:attribute>
+      <xsl:apply-templates />
+    </xsl:copy>
+  </xsl:template>
+
+  <xsl:template match="id('searchGadget')">
+    <xsl:copy>
+      <xsl:copy-of select="@*" />
+      <xsl:attribute name="class">form-control form-control-sm</xsl:attribute>
+      <xsl:apply-templates />
+    </xsl:copy>
+  </xsl:template>
+
+  <xsl:template match="id('searchGadget_form')//input[@class='searchButton']">
+    <xsl:copy>
+      <xsl:copy-of select="@*" />
+      <xsl:attribute name="class">btn btn-sm btn-secondary-outline</xsl:attribute>
       <xsl:apply-templates />
     </xsl:copy>
   </xsl:template>
@@ -135,9 +169,6 @@
       </div>
     </replace>
   </rules>
-
-  <!-- Content header -->
-  <replace css:theme="#portal-top" css:content-children="#portal-top" />
 
   <!-- Footer -->
   <replace css:theme-children="#portal-footer"
