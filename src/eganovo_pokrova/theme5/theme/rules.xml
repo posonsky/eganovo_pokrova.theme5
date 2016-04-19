@@ -116,6 +116,22 @@
   <!-- full-width breadcrumb -->
   <replace css:content="#viewlet-above-content" css:theme="#above-content" />
 
+  <xsl:template match="id('portal-breadcrumbs')//ol">
+    <xsl:copy>
+      <xsl:copy-of select="@*" />
+      <xsl:attribute name="class">breadcrumb</xsl:attribute>
+      <xsl:apply-templates />
+    </xsl:copy>
+  </xsl:template>
+
+  <xsl:template match="id('portal-breadcrumbs')//ol/li[last()]">
+    <xsl:copy>
+      <xsl:copy-of select="@*" />
+      <xsl:attribute name="class">active</xsl:attribute>
+      <xsl:apply-templates />
+    </xsl:copy>
+  </xsl:template>
+
   <!-- Alert message -->
   <replace css:theme-children="#global_statusmessage"
     css:content-children="#global_statusmessage" />
