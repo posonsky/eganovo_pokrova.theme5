@@ -72,8 +72,8 @@
 
   <xsl:template match="a">
     <xsl:copy>
-      <xsl:attribute name="class">nav-link</xsl:attribute>
       <xsl:copy-of select="@*" />
+      <xsl:attribute name="class">nav-link</xsl:attribute>
       <xsl:apply-templates />
     </xsl:copy>
   </xsl:template>
@@ -177,14 +177,82 @@
 
   <!-- Right column -->
   <rules css:if-content="#portal-column-one">
-    <replace css:theme="#right-column-container">
+    <replace css:theme="#right-column-placeholder"
+      css:content-children="#portal-column-one" />
+
+    <!--
+    <replace css:theme="#right-column-container" method="document">
       <div class="col-xs-12 col-md-5 sidebar-offcanvas">
         <aside id="right-column">
           <xsl:copy-of css:select="#portal-column-one > *" />
         </aside>
       </div>
     </replace>
+  -->
   </rules>
+
+  <!-- Portlets -->
+  <xsl:template match="id('portal-column-one')/div/section[contains(@class, 'portlet')]">
+    <xsl:copy>
+      <xsl:copy-of select="@*" />
+      <xsl:attribute name="class">card</xsl:attribute>
+      <xsl:apply-templates />
+    </xsl:copy>
+  </xsl:template>
+
+  <xsl:template match="//header[@class='portletHeader']">
+    <xsl:copy>
+      <xsl:copy-of select="@*" />
+      <xsl:attribute name="class">card-header</xsl:attribute>
+      <xsl:apply-templates />
+    </xsl:copy>
+  </xsl:template>
+
+  <xsl:template match="//header[@class='portletHeader']/node()">
+    <h4 class="card-title">
+      <xsl:copy-of select="." />
+    </h4>
+  </xsl:template>
+
+  <xsl:template match="//section[@class='portletContent']/ul">
+    <xsl:copy>
+      <xsl:copy-of select="@*" />
+      <xsl:attribute name="class">list-group list-group-flush</xsl:attribute>
+      <xsl:apply-templates />
+    </xsl:copy>
+  </xsl:template>
+
+  <xsl:template match="//section[@class='portletContent']/ul/li">
+    <xsl:copy>
+      <xsl:copy-of select="@*" />
+      <xsl:attribute name="class">list-group-item</xsl:attribute>
+      <xsl:apply-templates />
+    </xsl:copy>
+  </xsl:template>
+
+  <xsl:template match="//section[@class='portletContent']//a">
+    <xsl:copy>
+      <xsl:copy-of select="@*" />
+      <xsl:attribute name="class"><xsl:value-of select="@class"/> card-link</xsl:attribute>
+      <xsl:apply-templates />
+    </xsl:copy>
+  </xsl:template>
+
+  <xsl:template match="//footer[@class='portletFooter']">
+    <xsl:copy>
+      <xsl:copy-of select="@*" />
+      <xsl:attribute name="class">card-footer</xsl:attribute>
+      <xsl:apply-templates />
+    </xsl:copy>
+  </xsl:template>
+
+  <xsl:template match="//footer[@class='portletFooter']/a">
+    <xsl:copy>
+      <xsl:copy-of select="@*" />
+      <xsl:attribute name="class">card-link btn btn-primary-outline</xsl:attribute>
+      <xsl:apply-templates />
+    </xsl:copy>
+  </xsl:template>
 
   <!-- Footer -->
   <replace css:theme-children="#portal-footer"

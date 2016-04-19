@@ -1,0 +1,10 @@
+/* Portlets */
+.card-header, .card-footer {
+  background-image: url("../images/whitestar02.png");
+}
+
+time.portletItemDetails {
+  @extend .text-muted;
+  display: block;
+  font-size: 80%;
+}
