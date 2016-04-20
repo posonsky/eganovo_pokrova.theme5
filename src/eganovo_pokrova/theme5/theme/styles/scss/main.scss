@@ -1,4 +1,16 @@
+/* Mixins */
+@import "mixins/_font-face.scss";
+
+/* Fonts */
+@import "theme5-fonts.scss";
+
+/* Custom variables */
+@import "variables";
+
+/* Bootstrap */
 @import "bootstrap-flex.scss";
+
+
 @import "theme5-navbars.scss";
 @import "theme5-portlets.scss";
 
