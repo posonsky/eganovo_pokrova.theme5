@@ -70,7 +70,7 @@
     </xsl:if>
   </xsl:template>
 
-  <xsl:template match="a">
+  <xsl:template match="id('portal-globalnav')/li/a">
     <xsl:copy>
       <xsl:copy-of select="@*[name()!='class']" />
       <xsl:attribute name="class">nav-link</xsl:attribute>
@@ -106,12 +106,6 @@
       <xsl:apply-templates />
     </xsl:copy>
   </xsl:template>
-
-  <!-- include view @@hero on homepage only
-  <after css:theme="#mainnavigation-wrapper"
-    css:content=".principal" href="/@@hero"
-    css:if-content="body.template-document_view.section-front-page" />
-  -->
 
   <!-- full-width breadcrumb -->
   <replace css:content="#viewlet-above-content" css:theme="#above-content" />
@@ -240,6 +234,47 @@
     <xsl:copy>
       <xsl:copy-of select="@*[name()!='class']" />
       <xsl:attribute name="class">card-link btn btn-primary-outline</xsl:attribute>
+      <xsl:apply-templates />
+    </xsl:copy>
+  </xsl:template>
+
+  <!-- Pagination -->
+  <xsl:template match="//nav[@class='pagination']/ul">
+    <xsl:copy>
+      <xsl:copy-of select="@*[name()!='class']" />
+      <xsl:attribute name="class">pagination</xsl:attribute>
+      <xsl:apply-templates />
+    </xsl:copy>
+  </xsl:template>
+
+  <xsl:template match="//nav[@class='pagination']/ul/li">
+    <xsl:copy>
+      <xsl:copy-of select="@*[name()!='class']" />
+        <xsl:choose>
+          <xsl:when test="span and not(@class='disabled')">
+            <xsl:attribute name="class">page-item active</xsl:attribute>
+          </xsl:when>
+          <xsl:otherwise>
+            <xsl:attribute name="class"><xsl:value-of select="@class"/> page-item</xsl:attribute>
+          </xsl:otherwise>
+        </xsl:choose>
+      <xsl:apply-templates />
+    </xsl:copy>
+  </xsl:template>
+
+  <xsl:template match="//nav[@class='pagination']/ul/li/span">
+    <a class="page-link">
+      <xsl:copy>
+        <xsl:copy-of select="@*" />
+        <xsl:apply-templates />
+      </xsl:copy>
+    </a>
+  </xsl:template>
+
+  <xsl:template match="//nav[@class='pagination']/ul/li/a">
+    <xsl:copy>
+      <xsl:copy-of select="@*[name()!='class']" />
+      <xsl:attribute name="class">page-link</xsl:attribute>
       <xsl:apply-templates />
     </xsl:copy>
   </xsl:template>
