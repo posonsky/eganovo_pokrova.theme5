@@ -55,7 +55,7 @@
   <xsl:template match="id('portal-globalnav')/li">
     <xsl:if test="not(@id='portaltab-index_html')">
       <xsl:copy>
-        <xsl:for-each select="@id|@role">
+        <xsl:for-each select="@*[name()!='class']">
           <xsl:copy/>
         </xsl:for-each>
         <xsl:attribute name="class">
@@ -72,7 +72,7 @@
 
   <xsl:template match="a">
     <xsl:copy>
-      <xsl:copy-of select="@*" />
+      <xsl:copy-of select="@*[name()!='class']" />
       <xsl:attribute name="class">nav-link</xsl:attribute>
       <xsl:apply-templates />
     </xsl:copy>
@@ -85,7 +85,7 @@
 
   <xsl:template match="id('searchGadget_form')">
     <xsl:copy>
-      <xsl:copy-of select="@*" />
+      <xsl:copy-of select="@*[name()!='class']" />
       <xsl:attribute name="class">form-inline pull-xs-right</xsl:attribute>
       <xsl:apply-templates />
     </xsl:copy>
@@ -93,7 +93,7 @@
 
   <xsl:template match="id('searchGadget')">
     <xsl:copy>
-      <xsl:copy-of select="@*" />
+      <xsl:copy-of select="@*[name()!='class']" />
       <xsl:attribute name="class">form-control form-control-sm</xsl:attribute>
       <xsl:apply-templates />
     </xsl:copy>
@@ -101,7 +101,7 @@
 
   <xsl:template match="id('searchGadget_form')//input[@class='searchButton']">
     <xsl:copy>
-      <xsl:copy-of select="@*" />
+      <xsl:copy-of select="@*[name()!='class']" />
       <xsl:attribute name="class">btn btn-sm btn-secondary-outline</xsl:attribute>
       <xsl:apply-templates />
     </xsl:copy>
@@ -118,7 +118,7 @@
 
   <xsl:template match="id('portal-breadcrumbs')//ol">
     <xsl:copy>
-      <xsl:copy-of select="@*" />
+      <xsl:copy-of select="@*[name()!='class']" />
       <xsl:attribute name="class">breadcrumb</xsl:attribute>
       <xsl:apply-templates />
     </xsl:copy>
@@ -126,7 +126,7 @@
 
   <xsl:template match="id('portal-breadcrumbs')//ol/li[last()]">
     <xsl:copy>
-      <xsl:copy-of select="@*" />
+      <xsl:copy-of select="@*[name()!='class']" />
       <xsl:attribute name="class">active</xsl:attribute>
       <xsl:apply-templates />
     </xsl:copy>
@@ -179,22 +179,12 @@
   <rules css:if-content="#portal-column-one">
     <replace css:theme="#right-column-placeholder"
       css:content-children="#portal-column-one" />
-
-    <!--
-    <replace css:theme="#right-column-container" method="document">
-      <div class="col-xs-12 col-md-5 sidebar-offcanvas">
-        <aside id="right-column">
-          <xsl:copy-of css:select="#portal-column-one > *" />
-        </aside>
-      </div>
-    </replace>
-  -->
   </rules>
 
   <!-- Portlets -->
   <xsl:template match="id('portal-column-one')/div/section[contains(@class, 'portlet')]">
     <xsl:copy>
-      <xsl:copy-of select="@*" />
+      <xsl:copy-of select="@*[name()!='class']" />
       <xsl:attribute name="class">card</xsl:attribute>
       <xsl:apply-templates />
     </xsl:copy>
@@ -202,7 +192,7 @@
 
   <xsl:template match="//header[@class='portletHeader']">
     <xsl:copy>
-      <xsl:copy-of select="@*" />
+      <xsl:copy-of select="@*[name()!='class']" />
       <xsl:attribute name="class">card-header</xsl:attribute>
       <xsl:apply-templates />
     </xsl:copy>
@@ -216,7 +206,7 @@
 
   <xsl:template match="//section[@class='portletContent']/ul">
     <xsl:copy>
-      <xsl:copy-of select="@*" />
+      <xsl:copy-of select="@*[name()!='class']" />
       <xsl:attribute name="class">list-group list-group-flush</xsl:attribute>
       <xsl:apply-templates />
     </xsl:copy>
@@ -224,7 +214,7 @@
 
   <xsl:template match="//section[@class='portletContent']/ul/li">
     <xsl:copy>
-      <xsl:copy-of select="@*" />
+      <xsl:copy-of select="@*[name()!='class']" />
       <xsl:attribute name="class">list-group-item</xsl:attribute>
       <xsl:apply-templates />
     </xsl:copy>
@@ -232,7 +222,7 @@
 
   <xsl:template match="//section[@class='portletContent']//a">
     <xsl:copy>
-      <xsl:copy-of select="@*" />
+      <xsl:copy-of select="@*[name()!='class']" />
       <xsl:attribute name="class"><xsl:value-of select="@class"/> card-link</xsl:attribute>
       <xsl:apply-templates />
     </xsl:copy>
@@ -240,7 +230,7 @@
 
   <xsl:template match="//footer[@class='portletFooter']">
     <xsl:copy>
-      <xsl:copy-of select="@*" />
+      <xsl:copy-of select="@*[name()!='class']" />
       <xsl:attribute name="class">card-footer</xsl:attribute>
       <xsl:apply-templates />
     </xsl:copy>
@@ -248,7 +238,7 @@
 
   <xsl:template match="//footer[@class='portletFooter']/a">
     <xsl:copy>
-      <xsl:copy-of select="@*" />
+      <xsl:copy-of select="@*[name()!='class']" />
       <xsl:attribute name="class">card-link btn btn-primary-outline</xsl:attribute>
       <xsl:apply-templates />
     </xsl:copy>
