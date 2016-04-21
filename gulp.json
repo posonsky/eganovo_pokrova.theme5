@@ -4,7 +4,7 @@
 
   "srcs" : {
     "less" : "styles/less/main.less",
-    "scss" : "styles/scss/main.scss"
+    "scss" : "styles/scss/theme5.scss"
   },
 
   "dsts" : {
