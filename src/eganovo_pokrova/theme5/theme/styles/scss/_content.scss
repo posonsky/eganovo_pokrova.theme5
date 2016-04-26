@@ -1,0 +1,75 @@
+/* Content */
+
+/* First page (collection view) */
+#content-core {
+
+  .documentByLine {
+    font-size: 70%;
+    font-weight: 300;
+    margin-bottom: .5rem;
+  }
+
+  .leadImage {
+    figure {
+      //float: left;
+      @extend .img-thumbnail;
+      @extend .pull-xs-left;
+      margin-right: .75rem;
+    }
+  }
+
+  p {
+    text-align: justify;
+    hyphens: auto;
+  }
+}
+
+/* Standard page */
+article#content {
+
+  .documentByLine {
+    font-size: 70%;
+    font-weight: 300;
+    margin-bottom: .5rem;
+  }
+
+  .documentDescription {
+    font-size: 120%;
+    font-weight: 300;
+  }
+
+  .internal-link>img {
+    @extend .img-thumbnail;
+    @extend .pull-xs-left;
+  }
+}
+
+/* Relative content */
+#relatedItemBox {
+
+  header {
+    @extend h5;
+  }
+
+  ul {
+    @extend .list-group;
+    @include list-unstyled;
+
+    li {
+      @extend .list-group-item;
+
+      span.contenttype-document {
+        @extend h4;
+        display: block;
+      }
+    }
+  }
+}
+
+.documentActions {
+  margin-top: 1rem;
+
+  ul {
+    @include list-unstyled;
+  }
+}
