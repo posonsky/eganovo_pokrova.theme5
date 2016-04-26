@@ -1,0 +1,26 @@
+/* Portal footer */
+
+#portal-footer {
+  background-image: url("../images/whitestar02.png");
+  border-radius: $border-radius $border-radius 0 0;
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+  padding-top: 1rem;
+
+  #portal-siteactions {
+    display: flex;
+    list-style-type: none;
+
+    li {
+      margin: 0 1rem;
+    }
+  }
+
+  #portal-colophon {
+
+    .colophonWrapper ul {
+      list-style-type: none;
+    }
+  }
+}
