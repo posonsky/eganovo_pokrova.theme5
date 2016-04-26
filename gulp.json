@@ -8,11 +8,17 @@
   },
 
   "dsts" : {
-    "styles" : "styles"
+    "styles" : "styles",
+    "fonts" : "fonts"
   },
 
   "sourceCss" : "main.css",
   "targetCss" : "theme5-compiled.css",
+
+  "fonts" : [
+    "font-awesome/fonts",
+    "roboto-font/fonts"
+  ],
 
   "browserSync" : {
     "proxy" : "lh:8081",
