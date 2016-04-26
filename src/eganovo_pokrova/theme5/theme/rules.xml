@@ -11,7 +11,7 @@
   <xsl:strip-space elements="*"/>
 
   <theme href="index.html" />
-  <notheme css:if-not-content="body.frontend#visual-portal-wrapper" />
+  <!-- <notheme css:if-not-content="body.frontend#visual-portal-wrapper" /> -->
 
   <rules css:if-content="#portal-top">
     <!-- Attributes -->
@@ -159,6 +159,7 @@
 
         </div>
       </div>
+
       <footer class="row">
         <div class="col-xs-12 col-md-7">
           <xsl:copy-of css:select="#viewlet-below-content" />
@@ -280,6 +281,8 @@
   </xsl:template>
 
   <!-- Footer -->
+  <drop css:content="#portal-footer-wrapper .row" />
+
   <replace css:theme-children="#portal-footer"
     css:content-children="#portal-footer-wrapper" />
 
