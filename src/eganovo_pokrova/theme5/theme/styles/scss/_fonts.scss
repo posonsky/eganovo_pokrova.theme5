@@ -1,135 +1,52 @@
-/* FONTS */
+// font-face mixin
+@import "font-face-mixin/fontface";
 
-/* Roboto */
-@include font-face(Roboto, '../roboto/roboto-light', 300, normal);
-@include font-face(Roboto, '../roboto/roboto-lightitalic', 300, italic);
+// Awesome
+@import "font-awesome/scss/font-awesome";
 
-@include font-face(Roboto, '../roboto/roboto-regular', 400, normal);
-@include font-face(Roboto, '../roboto/roboto-italic', 400, italic);
+// Roboto
+//@import "roboto-font/scss/fonts"; // Not works
 
-@include font-face(Roboto, '../roboto/roboto-medium', 500, normal);
-@include font-face(Roboto, '../roboto/roboto-mediumitalic', 400, italic);
+@include font-face(Roboto, '../fonts/roboto-thin-webfont', 100, normal);
+@include font-face(Roboto, '../fonts/roboto-thinitalic-webfont', 100, italic);
 
-@include font-face(Roboto, '../roboto/roboto-bold', 700, normal);
-@include font-face(Roboto, '../roboto/roboto-bolditalic', 700, italic);
+@include font-face(Roboto, '../fonts/roboto-light-webfont', 300, normal);
+@include font-face(Roboto, '../fonts/roboto-lightitalic-webfont', 300, italic);
 
-@include font-face(Roboto, '../roboto/roboto-light', 300, normal);
-@include font-face(Roboto, '../roboto/roboto-lightitalic', 300, italic);
+@include font-face(Roboto, '../fonts/roboto-regular-webfont', 400, normal);
+@include font-face(Roboto, '../fonts/roboto-italic-webfont', 400, italic);
+
+@include font-face(Roboto, '../fonts/roboto-medium-webfont', 500, normal);
+@include font-face(Roboto, '../fonts/roboto-mediumitalic-webfont', 400, italic);
+
+@include font-face(Roboto, '../fonts/roboto-bold-webfont', 700, normal);
+@include font-face(Roboto, '../fonts/roboto-bolditalic-webfont', 700, italic);
+
+@include font-face(Roboto, '../fonts/roboto-black-webfont', 900, normal);
+@include font-face(Roboto, '../fonts/roboto-blackitalic-webfont', 900, italic);
 
 /* Roboto Condensed */
-@include font-face('Roboto Condensed', '../roboto/robotocondensed-light',
+@include font-face('Roboto Condensed',
+                   '../fonts/robotocondensed-light-webfont', 300, normal);
+@include font-face('Roboto Condensed',
+                   '../fonts/robotocondensed-lightitalic-webfont', 300, italic);
+
+@include font-face('Roboto Condensed',
+                   '../fonts/robotocondensed-regular-webfont', 400, normal);
+@include font-face('Roboto Condensed',
+                   '../fonts/robotocondensed-italic-webfont', 400, italic);
+
+@include font-face('Roboto Condensed', '../fonts/robotocondensed-bold-webfont',
+                   400, normal);
+@include font-face('Roboto Condensed',
+                   '../fonts/robotocondensed-bolditalic-webfont', 400, italic);
+
+/* Roboto Slab */
+@include font-face('Roboto Slab', '../fonts/robotoslab-thin-webfont',
+                   100, normal);
+@include font-face('Roboto Slab', '../fonts/robotoslab-light-webfont',
                    300, normal);
-@include font-face('Roboto Condensed', '../roboto/robotocondensed-lightitalic',
-                   300, italic);
-
-
-/*
-.font-face(
-  @font-path:     '../roboto/';
-	@file-name:     'roboto-light';
-	@font-family:   'Roboto';
-	@font-weight:   300;
-	@font-style:    normal;
-	@svg-id:        'robotolight';
-  @local:         ~"local('Roboto Light'),";
-);
-
-// 300 Light Italic
-.font-face(
-  @font-path:     '../roboto/';
-	@file-name:		'roboto-lightitalic';
-	@font-family:	'Roboto';
-	@font-weight:	300;
-	@font-style:	italic;
-	@svg-id:		'robotolight_italic';
-  @local:         ~"local('Roboto Light Italic'),";
-);
-
-// 400 Regular
-.font-face(
-  @font-path:     '../roboto/';
-	@file-name:		'roboto-regular';
-	@font-family:	'Roboto';
-	@font-weight:	400;
-	@font-style:	normal;
-	@svg-id:		'robotoregular';
-  @local:         ~"local('Roboto Regular'),";
-);
-
-// 400 Italic
-.font-face(
-  @font-path:     '../roboto/';
-	@file-name:		'roboto-italic';
-	@font-family:	'Roboto';
-	@font-weight:	400;
-	@font-style:	italic;
-	@svg-id:		'robotoitalic';
-  @local:         ~"local('Roboto Italic'),";
-);
-
-// 500 Medium
-.font-face(
-  @font-path:     '../roboto/';
-  @file-name:		'roboto-medium';
-	@font-family:	'Roboto';
-	@font-weight:	500;
-	@font-style:	normal;
-	@svg-id:		'robotomedium';
-  @local:         ~"local('Roboto Medium'),";
-);
-
-// 500 Medium Italic
-.font-face(
-  @font-path:     '../roboto/';
-	@file-name:		'roboto-mediumitalic';
-	@font-family:	'Roboto';
-	@font-weight:	500;
-	@font-style:	italic;
-	@svg-id:		'robotomedium_italic';
-  @local:         ~"local('Roboto Medium Italic'),";
-);
-
-// 700 Bold
-.font-face(
-  @font-path:     '../roboto/';
-	@file-name:		'roboto-bold';
-	@font-family:	'Roboto';
-	@font-weight:	700;
-	@font-style:	normal;
-	@svg-id:		'robotobold';
-  @local:         ~"local('Roboto Bold'),";
-);
-
-// 700 Bold Italic
-.font-face(
-  @font-path:     '../roboto/';
-	@file-name:		'roboto-bolditalic';
-	@font-family:	'Roboto';
-	@font-weight:	700;
-	@font-style:	italic;
-	@svg-id:		'robotobold_italic';
-  @local:         ~"local('Roboto Bold Italic'),";
-);
-
-// 300 Light Condensed (toolbar)
-.font-face(
-  @font-path:     '../roboto/';
-	@file-name:		'robotocondensed-light';
-	@font-family:	'Roboto Condensed';
-	@font-weight:	300;
-	@font-style:	normal;
-	@svg-id:		'roboto_condensedlight';
-  @local:         ~"local('Roboto Condensed Light'),";
-);
-
-// 300 Light Condensed Italic (toolbar)
-.font-face(
-  @font-path:     '../roboto/';
-	@file-name:		'robotocondensed-lightitalic';
-	@font-family:	'Roboto Condensed';
-	@font-weight:	300;
-	@font-style:	italic;
-	@svg-id:		'roboto_condensedlight_italic';
-  @local:         ~"local('Roboto Condensed Thin Italic'),";
-);
-*/
+@include font-face('Roboto Slab', '../fonts/robotoslab-regular-webfont',
+                   400, normal);
+@include font-face('Roboto Slab', '../fonts/robotoslab-bold-webfont',
+                   700, normal);

@@ -25,7 +25,7 @@ gulp.task('scss', function() {
     .pipe(sourcemaps.init())
     .pipe(sass({
       outputStyle : "compressed",
-      includePaths : [ config.modules + "bootstrap/scss/" ],
+      includePaths : [ config.modules ],
       outFile : config.targetCss,
       sourceMap : true
     }))

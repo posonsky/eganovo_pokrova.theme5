@@ -1,17 +1,18 @@
 /* Mixins */
-@import "mixins/_font-face";
-
-/* Fonts */
-@import "fonts";
 
 /* Custom variables */
 @import "variables";
 
+/* Fonts */
+@import "fonts";
+
 /* Bootstrap */
-@import "bootstrap-flex";
+@import "bootstrap/scss/bootstrap-flex";
 
 /* Theme5 components */
 @import "navbars";
 @import "portlets";
+@import "portal-footer";
+@import "content";
 
 @import "misc";
