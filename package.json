@@ -9,8 +9,10 @@
   },
   "devDependencies": {
     "browser-sync": "^2.11.1",
+    "bootstrap": "^4.0.0-alpha.2",
     "critical": "^0.7.2",
     "del": "^2.2.0",
+    "font-awesome": "^4.6.1",
     "font-face-mixin": "^1.1.0",
     "grunt": "~0.4.4",
     "grunt-browser-sync": "^0.8.2",
@@ -37,14 +39,10 @@
     "gulp-sequence": "^0.4.5",
     "gulp-sourcemaps": "^1.6.0",
     "gulp-symlink": "^2.1.4",
+    "gulp-ttf2woff2": "^2.0.2",
     "gulp-uglify": "^1.5.3",
     "gulp-uncss": "^1.0.5",
-    "require-dir": "^0.3.0"
-  },
-  "dependencies": {
-    "bootstrap": "^4.0.0-alpha.2",
-    "font-awesome": "^4.6.1",
-    "octicons": "^3.5.0",
+    "require-dir": "^0.3.0",
     "roboto-font": "^0.1.0"
-  }
+  },
 }
