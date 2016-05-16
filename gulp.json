@@ -4,12 +4,29 @@
 
   "srcs" : {
     "less" : "styles/less/main.less",
-    "scss" : "styles/scss/theme5.scss"
+    "scss" : "styles/scss/theme5.scss",
+    "js" : {
+      "path" : "js",
+      "bundle" : "theme5",
+      "modules" : [
+        "js/theme5.js"
+      ],
+      "includes" : [
+        "tether/src/js/utils.js",
+        "tether/src/js/tether.js",
+        "tether/src/js/constraint.js",
+        "tether/src/js/abutment.js",
+        "tether/src/js/shift.js",
+
+        "bootstrap/dist/js/bootstrap.js"
+      ]
+    }
   },
 
   "dsts" : {
     "styles" : "styles",
-    "fonts" : "fonts"
+    "fonts" : "fonts",
+    "scripts" : "scripts"
   },
 
   "sourceCss" : "main.css",
