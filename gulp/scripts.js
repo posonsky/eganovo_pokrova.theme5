@@ -12,7 +12,6 @@ var gulp = require('gulp'),
   babel = require('gulp-babel'),
   replace = require('gulp-string-replace'),
   lazypipe = require('lazypipe'),
-  //combiner = require('stream-combiner2'),
   wrapJS = require("gulp-wrap-js");
 
 var config = require('../gulp.json');
@@ -56,7 +55,6 @@ var isBootstrap = function (file) {
 };
 
 gulp.task('scripts', ['clean:scripts'], function() {
-  //var combined = combiner.obj([
   return  gulp.src(allJS)
     .pipe(plumber({
       errorHandler: notify.onError({
@@ -78,10 +76,6 @@ gulp.task('scripts', ['clean:scripts'], function() {
       title: 'JavaScript Minified and Concatenated!',
       message: 'your JS files has been minified and concatenated.'
     }));
-  //]);
-
-  //combined.on('error', console.error.bind(console));
-  //return combined;
 });
 
 /* Lint, lint the JavaScript files */
