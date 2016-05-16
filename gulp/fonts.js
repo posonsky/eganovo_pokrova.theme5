@@ -38,7 +38,10 @@ gulp.task('fonts:copy', ['clean:fonts'], function() {
 });
 
 gulp.task('ttf2woff2', function(){
-  gulp.src([dstFonts + '/*.ttf'])
+  gulp.src([
+    dstFonts + '/*.ttf',
+    '!' + dstFonts + '/fontawesome*.ttf' // fontawesome ships with woff2
+    ])
     .pipe(plumber({
       errorHandler: notify.onError({
         title: "Error: Making WOFF2 fonts.",
