@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <layers>
   <layer
-      name="eganovo_pokrova.theme5"
-      interface="eganovo_pokrova.theme5.interfaces.IEganovoPokrovaTheme5Layer"
-      />
+    name="eganovo_pokrova.theme5"
+    interface="eganovo_pokrova.theme5.interfaces.IEganovoPokrovaTheme5Layer"
+    />
 </layers>
