@@ -38,7 +38,7 @@ setup(
     keywords='Python Plone',
     author='Stanislav Posonsky',
     author_email='psk@cpositive.ru',
-    url='https://pypi.python.org/pypi/eganovo_pokrova.theme5',
+    url='http://git.cpositive.ru/eganovo_pokrova.theme5',
     license='GPL version 2',
     packages=find_packages('src', exclude=['ez_setup']),
     namespace_packages=['eganovo_pokrova'],
